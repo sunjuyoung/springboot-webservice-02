@@ -1,6 +1,6 @@
 buildscript {
     ext{
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.1.9.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -21,17 +21,21 @@ apply plugin : 'io.spring.dependency-management'
 
 
 group 'com.test.book'
-version '1.0-SNAPSHOT'
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.projectlombok:lombok")
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+    compile('com.h2database:h2')
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
