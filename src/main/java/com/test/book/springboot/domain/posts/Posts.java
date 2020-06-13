@@ -37,4 +37,10 @@ public class Posts {
     //생성자 대신 Builder를 사용
 
 
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
 }
